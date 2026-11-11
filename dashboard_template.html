@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>talabat Customer Intelligence Simulator</title>
+<style>
+/*CSS*/
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <h1>talabat Customer Intelligence Simulator</h1>
+    <p>SBR group project · live synthetic survey data from our questionnaire · not affiliated with talabat</p>
+  </div>
+  <div class="status" id="status" aria-live="polite"></div>
+</header>
+<div class="toolbar" role="toolbar" aria-label="Simulation controls">
+  <button id="btnPlay" class="btn primary" type="button">Pause stream</button>
+  <label class="ctl" for="speed">Speed
+    <select id="speed">
+      <option value="1">1 response / s</option>
+      <option value="3" selected>3 responses / s</option>
+      <option value="10">10 responses / s</option>
+      <option value="30">30 responses / s</option>
+    </select>
+  </label>
+  <span class="sep" aria-hidden="true"></span>
+  <span class="ctl-label">Scenario shocks</span>
+  <button class="toggle" type="button" data-shock="keetaPromo" aria-pressed="false">Keeta discount week</button>
+  <button class="toggle" type="button" data-shock="serviceIssues" aria-pressed="false">Delivery issues spike</button>
+  <button class="toggle" type="button" data-shock="ramadan" aria-pressed="false">Ramadan</button>
+  <span class="sep" aria-hidden="true"></span>
+  <button id="btnRetrain" class="btn" type="button">Retrain all models</button>
+  <button id="btnReset" class="btn ghost" type="button">Reset data</button>
+</div>
+<nav class="tabs" id="tabs" aria-label="Sections">
+  <a href="#overview" data-tab="overview">Overview</a>
+  <a href="#retention" data-tab="retention"><span class="num">1</span>Retention &amp; churn</a>
+  <a href="#discounts" data-tab="discounts"><span class="num">2</span>Discount efficiency</a>
+  <a href="#grocery" data-tab="grocery"><span class="num">3</span>Grocery cross-sell</a>
+  <a href="#pnl" data-tab="pnl">P&amp;L &amp; competitors</a>
+  <a href="#data" data-tab="data">Survey data</a>
+</nav>
+<main id="main">
+  <div id="tab-overview" class="tab"></div>
+  <div id="tab-retention" class="tab"></div>
+  <div id="tab-discounts" class="tab"></div>
+  <div id="tab-grocery" class="tab"></div>
+  <div id="tab-pnl" class="tab"></div>
+  <div id="tab-data" class="tab"></div>
+</main>
+<footer>All algorithms run in your browser on synthetic data generated from the SBR questionnaire: K-means, Apriori, logistic and linear regression, a CART decision tree, gradient boosting and XGBoost-style boosting (second-order gain, L2 regularisation, row and column sampling), two-model uplift, z-tests and t-tests. Survey figures are simulated, not talabat data; the P&amp;L tab marks published figures as Reported and our estimates as Modelled.</footer>
+<script>
+/*JS*/
+</script>
+</body>
+</html>
